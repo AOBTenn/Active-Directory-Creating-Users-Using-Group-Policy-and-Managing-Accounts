@@ -1,17 +1,24 @@
 # Active-Directory-Creating-Users-Using-Group-Policy-and-Managing-Accounts
 <h2>Environments and Technologies Used</h2>
+
 - Microsoft Azure (Virtual Machines/Computer)
 - Remote Desktop
+  
 <h2>Operating Systems Used </h2>
+
 - Windows 10</b> (21H2)
+
 <h2>List of Prerequisites</h2>
+
 Link to Script https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1
-<h2>Project Steps</h2                
+
+Project Steps                
 
 1. Modify Client 1 (second Vm) so Non-admin users can login via Remote Desktop
    Login to Dc-1 as Admin User 
    Remote desktop -> Public ip address -> Enter Username: "Specify Domain name (back slash) Domain admin username" -> Enter Domain admin password
    Rt Click Start -> system -> Remote desktop -> "Select Users That can remotely access this Pc" -> Add -> Under "enter the object names to select" type "domain users" -> check names -> OK x2
+
 2. Create additional user
    Login to Dc-1 as Admin User 
    Remote desktop -> Public ip address -> Enter Username: "Specify Domain name (back slash) Domain admin username" -> Enter Domain admin password
