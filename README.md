@@ -56,8 +56,38 @@ After the 1oth attempt, try to login using the correct password
 If you are able to login that is because account lockout is not set, so go ahead and log out of Client 1. We are go to set it using group policy.
 
 10. Configure account Lockout (turn on)
-    (must be in Dc-1) -> Rt click start -> run -> Type  "gpmc.msc" -> enter -> Rt click  "Default Domain Policy" -> Edit -> computer config ->  Policies -> window Settings -> security settings -> Account policies -> account Lockout policy -> Double click "Account lockout duration" -> check box, set lock
+    (must be in Dc-1) -> Rt click start -> run -> Type  "gpmc.msc" -> enter -> Rt click  "Default Domain Policy" -> Edit -> computer config ->  Policies -> window Settings -> security settings -> Account policies -> account Lockout policy -> Double click "Account lockout duration" -> check box, set 
+    lockout time -> Ok x2 -> Apply
 
-12. Configure (turn on) Account lockout (
+     Double click "Account counter" -> check box, set counter -> Ok x2 -> Apply
+
+11. Login to Client-1 as domain admin
+    Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter Domain Username: "Specify domain admin name (back slash) Domain admin username" -> Enter Domain admin password
+
+12. Force policy to reset
+    In Client-1 -> Rt Click start -> command Prompt -> type "gpupdate /force" -> enter
+
+13. Log out of Client 1 as the Domain Admin
+
+Re-attempt to login to Client-1 as an employee with a bad password until account lockout
+
+14. Login to client 1 random employee
+    Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter wrong employee password 5x
+
+The account should be locked out, now we will have to unlock the user account
+
+15. Unlock User (employee) Account (In Dc-1)
+    Start -> windows Administrative tools -> Active directory Users and computers -> Rt click domain name -> Find -> Type user name -> Find now -> Double click user -> Account tab -> check "Unlock account " -> Apply
+
+16. Reattemp Client-1 login with correct password as random emmployee
+    Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
     
+The login should be successful indicating that the account has been unlocked. Now we are going to disable and then reenale the user account to observe what happens.
+
+17. Disable the user account
+    windows Administrative tools -> Active directory Users and computers -> Rt click domain name -> Find -> Type user name -> Find now -> rt Click user account -> Disable -> Refind
+
+    Observe down arrow nesxt to the account, this signifies that the account has been disabled.
+
+18. Log out of Client 1
 
