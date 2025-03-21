@@ -1,14 +1,15 @@
 # Active-Directory-Creating-Users-Using-Group-Policy-and-Managing-Accounts
-Environments and Technologies Used
+
+<h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Computer)
 - Remote Desktop
   
-Operating Systems Used
+<h2>Operating Systems Used </h2>
 
 - Windows 10</b> (21H2)
 
-List of Prerequisites
+<h2>List of Prerequisites</h2>
 
 Link to Script https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1
 
