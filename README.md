@@ -20,29 +20,29 @@ Link to Script https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-
    Remote desktop -> Public ip address -> Enter Username: "Specify Domain name (back slash) Domain admin username" -> Enter Domain admin password
 
    Rt Click Start -> system -> Remote desktop -> "Select Users That can remotely access this Pc" -> Add -> Under "enter the object names to select" type "domain users" -> check names -> OK x2
-
+   
 2. Create additional user
    Login to Dc-1 as Admin User 
    Remote desktop -> Public ip address -> Enter Username: "Specify Domain name (back slash) Domain admin username" -> Enter Domain admin password
 
     Rt Click Start -> Run -> Type Powershell -> Rt click, run as Admin -> copy script text into Powershell -> save to desktop -> Run script
-
+   
 3. Open active Directory Users and Computers -> Expand the domain -> "_Employees," Rt click, Refresh
 
    There should be a list of numerous employees being generated that can now log into Client 1
 
 4. Log out of Client 1 as the Domain Admin
-
+   
 5. Login to client 1 using a random employee
     Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
-
+   
 6. Log out of client-1
 
 Now  we will move on to dealing with simulated user account problems and Group policy settings
 
 7. Login back into to Dc-1
    Go to Vm in Azure -> click Dc-1 -> Public ip address -> Remote desktop -> Enter Username: "Specify Domain name (back slash) original username" -> Enter password
-
+   
 Attempt to  login to Client-1 as an employee with a bad password until account lockout
 
 8. Login to client 1 random employee
