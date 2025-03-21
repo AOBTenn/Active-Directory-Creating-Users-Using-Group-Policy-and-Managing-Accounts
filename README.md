@@ -55,3 +55,9 @@ After the 1oth attempt, try to login using the correct password
 
 If you are able to login that is because account lockout is not set, so go ahead and log out of Client 1. We are go to set it using group policy.
 
+10. Configure account Lockout (turn on)
+    (must be in Dc-1) -> Rt click start -> run -> Type  "gpmc.msc" -> enter -> Rt click  "Default Domain Policy" -> Edit -> computer config ->  Policies -> window Settings -> security settings -> Account policies -> account Lockout policy -> Double click "Account lockout duration" -> check box, set lock
+
+12. Configure (turn on) Account lockout (
+    
+
