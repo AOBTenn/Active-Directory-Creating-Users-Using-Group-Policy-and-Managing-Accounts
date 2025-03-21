@@ -84,10 +84,42 @@ The account should be locked out, now we will have to unlock the user account
     
 The login should be successful indicating that the account has been unlocked. Now we are going to disable and then reenale the user account to observe what happens.
 
-17. Disable the user account
+17. Disable the user account (In Dc-1)
     windows Administrative tools -> Active directory Users and computers -> Rt click domain name -> Find -> Type user name -> Find now -> rt Click user account -> Disable -> Refind
 
     Observe down arrow nesxt to the account, this signifies that the account has been disabled.
 
-18. Log out of Client 1
+18. Log out of Client 1, re-Login to client 1 as random employee
+    Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
 
+    Observe the Popup Warning stating about the status of the account and who to contact for help to rectify.
+
+19. Re-enable the user account (In Dc-1)
+    windows Administrative tools -> Active directory Users and computers -> Rt click domain name -> Find -> Type user name -> Find now -> rt Click user account -> Re-enable -> Refind
+
+    Observe down arrow next to the account has diappeared, this signifies that the account has been unlocked.
+
+20. Login to client 1 as random employee
+    Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
+
+   Observe that You can now log back into client -1 confirming that this account is unlocked and usable agian.
+
+LKastly we are going to observe the login logs in both D-c-1 and Client-1
+
+21. Check logs in Domain controller (Dc-1)
+    Search bar -> type "eventvwr.msc" -> Enter -> Expand windows Logs -> Security -> Rt click Security -> Find -> Type the "User account" -> Find Now
+
+    Observe  the data logs, there is no indication of the failed login attempts only login and log off
+
+22. Check logs in Second Virtual Machine (Client-1)
+    Search bar -> type "eventvwr.msc" -> Enter -> Expand windows Logs -> Security 
+
+    Observe we are unable to see anything in the security Folder because we  are not the system administrator
+
+23. Vview logs in client-1 as Admin
+     Search bar -> type "eventvwr.msc" -> Run as Administrator -> Enter domain admin username/password -> Enter -> Expand windows Logs -> Security -> Rt click Security -> Find -> Type the "User account" -> Find Now
+
+    Observe  the data logs, there is indication of the failed login attempts with login and log off attempts. The "Audit Failure" and Event id "4625" coincides with the faild attempts.
+
+
+congratulations on the completion of this lab. You have successfully used active directory to manage simulated employee accounts using group policy is real world sinareos. 
