@@ -1,14 +1,14 @@
 # Active-Directory-Creating-Users-Using-Group-Policy-and-Managing-Accounts
-<h2>Environments and Technologies Used</h2>
+Environments and Technologies Used
 
 - Microsoft Azure (Virtual Machines/Computer)
 - Remote Desktop
   
-<h2>Operating Systems Used </h2>
+Operating Systems Used
 
 - Windows 10</b> (21H2)
 
-<h2>List of Prerequisites</h2>
+List of Prerequisites
 
 Link to Script https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1
 
@@ -22,7 +22,8 @@ Project Steps
 2. Create additional user
    Login to Dc-1 as Admin User 
    Remote desktop -> Public ip address -> Enter Username: "Specify Domain name (back slash) Domain admin username" -> Enter Domain admin password
-    Rt Click Start -> Run -> Type Powershell -> Rt click, run as Admin -> copy script text into Powershell -> save to desktop -> Run script
+   Rt Click Start -> Run -> Type Powershell -> Rt click, run as Admin -> copy script text into Powershell -> save to desktop -> Run script
+
 3. Open active Directory Users and Computers -> Expand the domain -> "_Employees," Rt click, Refresh
    There should be a list of numerous employees being generated that can now log into Client 1
 
@@ -31,7 +32,7 @@ Project Steps
 5. Login to client 1 using a random employee
     Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
 
-7. Log out of client-1
+6. Log out of client-1
 
 Now  we will move on to dealing with simulated user account problems and Group policy settings
 
