@@ -1,5 +1,9 @@
 # Active-Directory-Creating-Users-Using-Group-Policy-and-Managing-Accounts
 
+<h2>Discription </h2>
+
+In this final project we are going us Active Directory with group policy to manage employee accounts.
+
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Computer)
