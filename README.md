@@ -21,130 +21,130 @@ Link to Script https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-
 
 <h2>Project Steps</h2>              
 
-1. Modify Client 1 (second Vm) so Non-admin users can login via Remote Desktop
+1. Modify Client 1 (second Vm) so Non-Admin Users can login via Remote Desktop
 
 Login to Dc-1 as Admin User 
-Remote desktop -> Public ip address -> Enter Username: "Specify Domain name (back slash) Domain admin username" -> Enter Domain admin password
-Rt Click Start -> system -> Remote desktop -> "Select Users That can remotely access this Pc" -> Add -> Under "enter the object names to select" type "domain users" -> check names -> OK x2
+Remote Desktop -> Public Ip Address -> Enter Username: "Specify Domain name (back slash) Domain Admin Username" -> Enter Domain Admin Password
+Rt Click Start -> System -> Remote Desktop -> "Select Users That can Remotely Access this Pc" -> Add -> Under "Enter the Object Names to Select" type "domain users" -> Check Names -> OK x2
 
-3. Create additional user
+3. Create Additional User
 
 Login to Dc-1 as Admin User 
-Remote desktop -> Public ip address -> Enter Username: "Specify Domain name (back slash) Domain admin username" -> Enter Domain admin password
-Rt Click Start -> Run -> Type Powershell -> Rt click, run as Admin -> copy script text into Powershell -> save to desktop -> Run script
+Remote desktop -> Public Ip Address -> Enter Username: "Specify Domain name (back slash) Domain Admin Username" -> Enter Domain Admin Password
+Rt Click Start -> Run -> Type Powershell -> Rt Click, run as Admin -> Copy script text into Powershell -> Save to desktop -> Run script
 
-5. Open active Directory Users and Computers -> Expand the domain -> "_Employees," Rt click, Refresh
+5. Open Active Directory Users and Computers -> Expand the Domain -> "_Employees," Rt click, Refresh
 
 There should be a list of numerous employees being generated that can now log into Client 1
 
 7. Log out of Client 1 as the Domain Admin
 
-8. Login to client 1 using a random employee
+8. Login to client 1 using a Random Employee
 
-Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
+Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
 
-10. Log out of client-1
+10. Log out of Client-1
 
 Now  we will move on to dealing with simulated user account problems and Group policy settings
 
 1. Login back into to Dc-1
 
-Go to Vm in Azure -> click Dc-1 -> Public ip address -> Remote desktop -> Enter Username: "Specify Domain name (back slash) original username" -> Enter password
+Go to Vm in Azure -> click Dc-1 -> Public Ip Address -> Remote Desktop -> Enter Username: "Specify Domain Name (back slash) original Username" -> Enter Password
    
-Attempt to  login to Client-1 as an employee with a bad password until account lockout
+Attempt to login to Client-1 as an employee with a bad password until account lockout
 
-2. Login to client 1 random employee
+2. Login to Client 1 Random Employee
 
-Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter wrong  employee password 10x
+Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter wrong Employee Password 10x
 
 After the 1oth attempt, try to login using the correct password
 
-3. Login to client 1 using a random employee
+3. Login to Client 1 using a Random Employee
 
-Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
+Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
 
 If you are able to login that is because account lockout is not set, so go ahead and log out of Client 1. We are go to set it using group policy.
 
-4. Configure account Lockout (turn on)
+4. Configure Account Lockout (turn on)
 
-(must be in Dc-1) -> Rt click start -> run -> Type  "gpmc.msc" -> enter -> Rt click  "Default Domain Policy" -> Edit -> computer config ->  Policies -> window Settings -> security settings -> Account policies -> account Lockout policy -> Double click "Account lockout duration" -> check box, set 
-lockout time -> Ok x2 -> Apply
+(must be in Dc-1) -> Rt Click Start -> Run -> Type "gpmc.msc" -> Enter -> Rt Click  "Default Domain Policy" -> Edit -> Computer Config ->  Policies -> Window Settings -> Security Settings -> Account Policies -> Account Lockout Policy -> Double Click "Account Lockout Duration" -> Check box, Set 
+Lockout Time -> Ok x2 -> Apply
 
-Double click "Account counter" -> check box, set counter -> Ok x2 -> Apply
+Double click "Account Counter" -> Check box, Set Counter -> Ok x2 -> Apply
 
-5. Login to Client-1 as domain admin
+5. Login to Client-1 as Domain Admin
 
-Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter Domain Username: "Specify domain admin name (back slash) Domain admin username" -> Enter Domain admin password
+Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Domain Username: "Specify Domain Admin Name (back slash) Domain Admin Username" -> Enter Domain Admin Password
 
-6. Force policy to reset
+6. Force Policy to Reset
 
-In Client-1 -> Rt Click start -> command Prompt -> type "gpupdate /force" -> enter
+In Client-1 -> Rt Click Start -> Command Prompt -> Type "gpupdate /force" -> Enter
 
-7. Log out of Client 1 as the Domain Admin
+7. Log out of Client-1 as the Domain Admin
 
-Re-attempt to login to Client-1 as an employee with a bad password until account lockout
+Re-attempt to login to Client-1 as Random Employee with a bad password until account lockout
 
-8. Login to client 1 random employee
+8. Login to Client-1 Random Employee
 
-Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter wrong employee password 5x
+Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter wrong EWmployee Password 5x
 
 The account should be locked out, now we will have to unlock the user account
 
 9. Unlock User (employee) Account (In Dc-1)
 
-Start -> windows Administrative tools -> Active directory Users and computers -> Rt click domain name -> Find -> Type user name -> Find now -> Double click user -> Account tab -> check "Unlock account " -> Apply
+Start -> Windows Administrative Tools -> Active Directory Users and Computers -> Rt Click Domain Name -> Find -> Type User Name -> Find now -> Double click User -> Account tab -> Check "Unlock Account " -> Apply
 
-10. Reattemp Client-1 login with correct password as random emmployee
+10. Re-attempt Client-1 login with correct password as Random Employee
 
-Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
+Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Random Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
     
 The login should be successful indicating that the account has been unlocked. 
 
 Now we are going to disable and then reenale the user account to observe what happens.
 
-1. Disable the user account (In Dc-1)
+1. Disable the User account (In Dc-1)
 
-windows Administrative tools -> Active directory Users and computers -> Rt click domain name -> Find -> Type user name -> Find now -> rt Click user account -> Disable -> Refind
+Windows Administrative Tools -> Active Directory Users and Computers -> Rt Click Domain Name -> Find -> Type User Name -> Find now -> Rt Click User account -> Disable -> Refind
 
 Observe down arrow nesxt to the account, this signifies that the account has been disabled.
 
-3. Log out of Client 1, re-Login to client 1 as random employee
+3. Log out of Client-1, re-Login to Client-1 as Random Employee
 
-Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
+Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Random Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
 
 Observe the Popup Warning stating about the status of the account and who to contact for help to rectify.
 
-5. Re-enable the user account (In Dc-1)
+5. Re-enable the User account (In Dc-1)
 
-windows Administrative tools -> Active directory Users and computers -> Rt click domain name -> Find -> Type user name -> Find now -> rt Click user account -> Re-enable -> Refind
+W#indows Administrative Tools -> Active Directory Users and Computers -> Rt Click Domain Name -> Find -> Type User Name -> Find now -> Rt Click User account -> Re-enable -> Refind
 
 Observe down arrow next to the account has diappeared, this signifies that the account has been unlocked.
 
-7. Login to client 1 as random employee
+7. Login to client-1 as Random Employee
 
-Go to Vm in Azure -> click Client-1 -> Public ip address -> Remote desktop -> Enter employee Username: "Specify domain name (back slash) employee username" -> Enter employee password
+Go to Vm in Azure -> click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Random Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
 
-Observe that You can now log back into client -1 confirming that this account is unlocked and usable agian.
+Observe that You can now log back into Client-1 confirming that this account is unlocked and usable agian.
 
 Lastly we are going to observe the login logs in both D-c-1 and Client-1
 
-1. Check logs in Domain controller (Dc-1)
+1. Check logs in Domain Controller (Dc-1)
 
-Search bar -> type "eventvwr.msc" -> Enter -> Expand windows Logs -> Security -> Rt click Security -> Find -> Type the "User account" -> Find Now
+Search bar -> Type "eventvwr.msc" -> Enter -> Expand Windows Logs -> Security -> Rt Click Security -> Find -> Type the "User account" -> Find Now
 
-Observe  the data logs, there is no indication of the failed login attempts only login and log off
+Observe the data logs, there is no indication of the failed login attempts only login and log off
 
 2. Check logs in Second Virtual Machine (Client-1)
 
-Search bar -> type "eventvwr.msc" -> Enter -> Expand windows Logs -> Security 
+Search bar -> Type "eventvwr.msc" -> Enter -> Expand Windows Logs -> Security 
 
-Observe we are unable to see anything in the security Folder because we  are not the system administrator
+Observe we are unable to see anything in the security Folder because we are not the system administrator
 
-3. Vview logs in client-1 as Admin
+3. View logs in Client-1 as Admin
 
-Search bar -> type "eventvwr.msc" -> Run as Administrator -> Enter domain admin username/password -> Enter -> Expand windows Logs -> Security -> Rt click Security -> Find -> Type the "User account" -> Find Now
+Search bar -> Type "eventvwr.msc" -> Run as Administrator -> Enter Domain Admin Username/Password -> Enter -> Expand Windows Logs -> Security -> Rt Click Security -> Find -> Type the "User account" -> Find Now
 
-Observe  the data logs, there is indication of the failed login attempts with login and log off attempts. The "Audit Failure" and Event id "4625" coincides with the faild attempts.
+Observe the data logs, there is indication of the failed login attempts with login and log off attempts. The "Audit Failure" and Event Id "4625" coincides with the faild attempts.
 
 
-congratulations on the completion of this lab. You have successfully used active directory to manage simulated employee accounts using group policy is real world sinareos.
+Congratulations on the completion of this lab. You have successfully used Active Directory to manage simulated employee accounts using Group Policy is real world scenarios.
