@@ -2,18 +2,20 @@
 
 <h2>Environments and Technologies Used</h2>
 
-Microsoft Azure (Virtual Machines/Computer)
-Remote Desktop
+- Microsoft Azure (Virtual Machines/Computer)
+- Remote Desktop
+- Active Directory
   
 <h2>Operating Systems Used </h2>
 
 Windows 10</b> (21H2)
+Windows Server 2022 Azure Edition
 
 <h2>List of Prerequisites</h2>
 
 Link to Script https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1
 
-Project Steps                
+<h2>Project Steps</h2>              
 
 1. Modify Client 1 (second Vm) so Non-admin users can login via Remote Desktop
 
