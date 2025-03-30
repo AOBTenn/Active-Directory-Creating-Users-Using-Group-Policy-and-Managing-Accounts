@@ -1,6 +1,8 @@
 # Active-Directory-Creating-Users-Using-Group-Policy-and-Managing-Accounts
 
-<h2>Discription </h2>
+![image](https://github.com/user-attachments/assets/af3b9cd7-edfc-4505-85bf-2e31649020c5)
+
+<h2>Description </h2>
 
 In this final project we are going us Active Directory with group policy to manage employee accounts.
 
