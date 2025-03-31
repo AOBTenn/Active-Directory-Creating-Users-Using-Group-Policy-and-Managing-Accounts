@@ -4,7 +4,7 @@
 
 <h2>Description </h2>
 
-In this final project we are going us Active Directory with group policy to manage employee accounts.
+In this final project we are going us Active Directory with Group Policy to manage employee accounts.
 
 <h2>Environments and Technologies Used</h2>
 
@@ -25,13 +25,23 @@ Link to Script https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-
 
 1. Modify Client 1 (second Vm) so Non-Admin Users can login via Remote Desktop
 
-Login to Dc-1 as Admin User 
+Login to Dc-1 as Admin User
+
 Remote Desktop -> Public Ip Address -> Enter Username: "Specify Domain name (back slash) Domain Admin Username" -> Enter Domain Admin Password
+
+![image](https://github.com/user-attachments/assets/ae6a4e61-9f41-4923-8a48-b44fc655ff8d)
+
 Rt Click Start -> System -> Remote Desktop -> "Select Users That can Remotely Access this Pc" -> Add -> Under "Enter the Object Names to Select" type "domain users" -> Check Names -> OK x2
+
+![image](https://github.com/user-attachments/assets/a1667041-76d0-4bb4-b8c5-b0ab9d352849)
+![image](https://github.com/user-attachments/assets/876fc695-93c7-41d7-9ffb-5d2c7c6ef5e5)
+![image](https://github.com/user-attachments/assets/06826e10-7fab-4345-be37-319e4e567edb)
+![image](https://github.com/user-attachments/assets/b626a4ab-1058-4a42-b19a-3bdc433bd1a1)
 
 3. Create Additional User
 
 Login to Dc-1 as Admin User 
+
 Remote desktop -> Public Ip Address -> Enter Username: "Specify Domain name (back slash) Domain Admin Username" -> Enter Domain Admin Password
 Rt Click Start -> Run -> Type Powershell -> Rt Click, run as Admin -> Copy script text into Powershell -> Save to desktop -> Run script
 
