@@ -140,10 +140,17 @@ The account should be locked out, now we will have to unlock the user account
 
 Start -> Windows Administrative Tools -> Active Directory Users and Computers -> Rt Click Domain Name -> Find -> Type User Name -> Find now -> Double click User -> Account tab -> Check "Unlock Account " -> Apply
 
+![image](https://github.com/user-attachments/assets/273a2fe9-db8f-4903-b288-2b49019ffa58)
+![image](https://github.com/user-attachments/assets/5c44defc-aa71-447e-a24b-bbf275cfc531)
+![image](https://github.com/user-attachments/assets/e8ebb917-0a60-4270-bebe-e8df91ac4a99)
+![image](https://github.com/user-attachments/assets/d8c882ba-78b3-43f6-9e77-eff2ea4584be)
+
 10. Re-attempt Client-1 login with correct password as Random Employee
 
 Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Random Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
-    
+
+![image](https://github.com/user-attachments/assets/90dc65ab-5c9d-45e9-8e94-3807149e13d3)
+
 The login should be successful indicating that the account has been unlocked. 
 
 Now we are going to disable and then reenale the user account to observe what happens.
