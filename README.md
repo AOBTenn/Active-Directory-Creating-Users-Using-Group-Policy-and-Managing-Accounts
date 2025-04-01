@@ -43,7 +43,17 @@ Rt Click Start -> System -> Remote Desktop -> "Select Users That can Remotely Ac
 Login to Dc-1 as Admin User 
 
 Remote desktop -> Public Ip Address -> Enter Username: "Specify Domain name (back slash) Domain Admin Username" -> Enter Domain Admin Password
+
+![image](https://github.com/user-attachments/assets/28ca1201-9e52-4b3a-8b9b-2e75c58b26dc)
+
 Rt Click Start -> Run -> Type Powershell -> Rt Click, run as Admin -> Copy script text into Powershell -> Save to desktop -> Run script
+
+![image](https://github.com/user-attachments/assets/7d301e22-606d-43d9-b973-5fdb5c212300)
+![image](https://github.com/user-attachments/assets/bab4505c-25d6-4d70-a151-6d0ffde84b5f)
+![image](https://github.com/user-attachments/assets/e8d72974-40d1-4388-9dad-573210e45875)
+![image](https://github.com/user-attachments/assets/1323a908-37b8-4907-a4e4-9b4bdf8dbf18)
+![image](https://github.com/user-attachments/assets/8a61ffe7-d702-4d45-a0d8-c7a35f081482)
+![image](https://github.com/user-attachments/assets/22ae019c-7eca-4cb7-86d2-6fe9f561afe0)
 
 5. Open Active Directory Users and Computers -> Expand the Domain -> "_Employees," Rt click, Refresh
 
