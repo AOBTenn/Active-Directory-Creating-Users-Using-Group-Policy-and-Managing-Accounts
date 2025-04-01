@@ -203,19 +203,34 @@ Lastly we are going to observe the login logs in both D-c-1 and Client-1
 
 Search bar -> Type "eventvwr.msc" -> Enter -> Expand Windows Logs -> Security -> Rt Click Security -> Find -> Type the "User account" -> Find Now
 
+![image](https://github.com/user-attachments/assets/34e6483f-afd3-4d66-99f5-6a9ef765420e)
+![image](https://github.com/user-attachments/assets/4d2e8084-54c0-4d14-b27c-bee3147a3905)
+![image](https://github.com/user-attachments/assets/19e19923-4f78-47e6-8191-6f49eaca9a2f)
+![image](https://github.com/user-attachments/assets/125a2838-2a2e-438d-8044-07e8c6632971)
+
 Observe the data logs, there is no indication of the failed login attempts only login and log off
+
+![image](https://github.com/user-attachments/assets/91eaa556-46ac-449e-be44-d475c9780a90)
 
 2. Check logs in Second Virtual Machine (Client-1)
 
 Search bar -> Type "eventvwr.msc" -> Enter -> Expand Windows Logs -> Security 
 
+![image](https://github.com/user-attachments/assets/1cc4b723-d954-46b3-ba05-b20ef090cec4)
+
 Observe we are unable to see anything in the security Folder because we are not the system administrator
+
+![image](https://github.com/user-attachments/assets/41a91a5e-bf1b-49c8-9c4c-1ca3afb37075)
 
 3. View logs in Client-1 as Admin
 
 Search bar -> Type "eventvwr.msc" -> Run as Administrator -> Enter Domain Admin Username/Password -> Enter -> Expand Windows Logs -> Security -> Rt Click Security -> Find -> Type the "User account" -> Find Now
 
+![image](https://github.com/user-attachments/assets/e481eadc-4728-41c7-9857-8ed4afad2641)
+![image](https://github.com/user-attachments/assets/f566feb3-7813-434b-9409-6d99eafc890c)
+
 Observe the data logs, there is indication of the failed login attempts with login and log off attempts. The "Audit Failure" and Event Id "4625" coincides with the faild attempts.
 
+![image](https://github.com/user-attachments/assets/ec534d88-0b8b-436e-b609-fc783fd14795)
 
 Congratulations on the completion of this lab. You have successfully used Active Directory to manage simulated employee accounts using Group Policy is real world scenarios.
