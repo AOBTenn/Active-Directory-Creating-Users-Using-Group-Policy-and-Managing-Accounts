@@ -159,13 +159,23 @@ Now we are going to disable and then reenale the user account to observe what ha
 
 Windows Administrative Tools -> Active Directory Users and Computers -> Rt Click Domain Name -> Find -> Type User Name -> Find now -> Rt Click User account -> Disable -> Refind
 
+![image](https://github.com/user-attachments/assets/273a2fe9-db8f-4903-b288-2b49019ffa58)
+![image](https://github.com/user-attachments/assets/f2917449-699d-4bd8-b4f6-9ef7b65e6b07)
+![image](https://github.com/user-attachments/assets/861b605d-9e6b-4d13-b732-3a6f31ba4320)
+
 Observe down arrow nesxt to the account, this signifies that the account has been disabled.
+
+![image](https://github.com/user-attachments/assets/5dc7385b-e48d-477e-8a48-d9a997d6fd33)
 
 3. Log out of Client-1, re-Login to Client-1 as Random Employee
 
 Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Random Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
 
+![image](https://github.com/user-attachments/assets/93143a3b-96c2-4624-8e53-31e48d001582)
+
 Observe the Popup Warning stating about the status of the account and who to contact for help to rectify.
+
+![image](https://github.com/user-attachments/assets/9412ce47-0fad-40b0-8e4f-a77ad140c55f)
 
 5. Re-enable the User account (In Dc-1)
 
