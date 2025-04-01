@@ -179,13 +179,21 @@ Observe the Popup Warning stating about the status of the account and who to con
 
 5. Re-enable the User account (In Dc-1)
 
-W#indows Administrative Tools -> Active Directory Users and Computers -> Rt Click Domain Name -> Find -> Type User Name -> Find now -> Rt Click User account -> Re-enable -> Refind
+W#indows Administrative Tools -> Active Directory Users and Computers -> Rt Click Domain Name -> Find -> Type User Name -> Find now -> Rt Click User Account -> Re-enable -> Refind
+
+![image](https://github.com/user-attachments/assets/273a2fe9-db8f-4903-b288-2b49019ffa58)
+![image](https://github.com/user-attachments/assets/18437b0e-5f45-40d3-8b2c-b354ec8bce43)
+![image](https://github.com/user-attachments/assets/7c4c4b91-d40e-4bce-a09b-045d7f7c1307)
 
 Observe down arrow next to the account has diappeared, this signifies that the account has been unlocked.
+
+![image](https://github.com/user-attachments/assets/42f4b300-a298-4546-ac3c-b43d16a588bf)
 
 7. Login to client-1 as Random Employee
 
 Go to Vm in Azure -> click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Random Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
+
+![image](https://github.com/user-attachments/assets/fdf95b82-5447-4254-94cd-5e9ffefd6364)
 
 Observe that You can now log back into Client-1 confirming that this account is unlocked and usable agian.
 
