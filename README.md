@@ -130,7 +130,11 @@ Re-attempt to login to Client-1 as Random Employee with a bad password until acc
 
 Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter wrong EWmployee Password 5x
 
+![image](https://github.com/user-attachments/assets/f4d0a94b-4f50-419c-8fd0-3f94ccc072c6)
+
 The account should be locked out, now we will have to unlock the user account
+
+![image](https://github.com/user-attachments/assets/6430ec38-0993-4de2-8dd3-6ef8408673c1)
 
 9. Unlock User (employee) Account (In Dc-1)
 
