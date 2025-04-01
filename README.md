@@ -155,7 +155,7 @@ Attempt to login to Client-1 as an employee with a bad password until account lo
  <p> 
 </p>
 
-2. Login to Client 1 Random Employee
+7. Login to Client 1 Random Employee
  <p> 
 </p>
 
@@ -171,7 +171,7 @@ After the 1oth attempt, try to login using the correct password
  <p> 
 </p>
 
-3. Login to Client 1 using a Random Employee
+8. Login to Client 1 using a Random Employee
  <p> 
 </p>
 
@@ -187,7 +187,7 @@ If you are able to login that is because account lockout is not set, so we are g
  <p> 
 </p>
 
-4. Configure Account Lockout (turn on)
+9. Configure Account Lockout (turn on)
  <p> 
 </p>
 
@@ -231,7 +231,7 @@ Force Policy to Reset
  <p> 
 </p>
 
-5. Login to Client-1 as Domain Admin
+10. Login to Client-1 as Domain Admin
  <p> 
 </p>
 
@@ -255,7 +255,7 @@ Rt Click Start -> Command Prompt -> Type "gpupdate /force" -> Enter
  <p> 
 </p>
 
-7. Log out of Client-1 as the Domain Admin
+11. Log out of Client-1 as the Domain Admin
  <p> 
 </p>
 
@@ -263,7 +263,7 @@ Re-attempt to login to Client-1 as Random Employee with a bad password until acc
  <p> 
 </p>
 
-8. Login to Client-1 Random Employee
+12. Login to Client-1 Random Employee
  <p> 
 </p>
 
@@ -283,7 +283,7 @@ The account should be locked out, now we will have to unlock the user account
  <p> 
 </p>
 
-9. Unlock User (employee) Account (In Dc-1)
+13. Unlock User (employee) Account (In Dc-1)
  <p> 
 </p>
 
@@ -307,7 +307,7 @@ Start -> Windows Administrative Tools -> Active Directory Users and Computers ->
  <p> 
 </p>
 
-10. Re-attempt Client-1 login with correct password as Random Employee
+14. Re-attempt Client-1 login with correct password as Random Employee
  <p> 
 </p>
 
@@ -327,7 +327,7 @@ Now we are going to disable and then reenale the user account to observe what ha
  <p> 
 </p>
 
-1. Disable the User account (In Dc-1)
+15. Disable the User account (In Dc-1)
  <p> 
 </p>
 
@@ -355,7 +355,7 @@ Observe down arrow nesxt to the account, this signifies that the account has bee
  <p> 
 </p>
 
-3. Log out of Client-1, re-Login to Client-1 as Random Employee
+16. Log out of Client-1, re-Login to Client-1 as Random Employee
  <p> 
 </p>
 
@@ -375,7 +375,7 @@ Observe the Popup Warning stating about the status of the account and who to con
  <p> 
 </p>
 
-5. Re-enable the User account (In Dc-1)
+17. Re-enable the User account (In Dc-1)
  <p> 
 </p>
 
@@ -403,7 +403,7 @@ Observe down arrow next to the account has diappeared, this signifies that the a
  <p> 
 </p>
 
-7. Login to client-1 as Random Employee
+18. Login to client-1 as Random Employee
  <p> 
 </p>
 
@@ -423,7 +423,7 @@ Lastly we are going to observe the login logs in both D-c-1 and Client-1
  <p> 
 </p>
 
-1. Check logs in Domain Controller (Dc-1)
+19. Check logs in Domain Controller (Dc-1)
  <p> 
 </p>
 
@@ -455,7 +455,7 @@ Observe the data logs, there is no indication of the failed login attempts only 
  <p> 
 </p>
 
-2. Check logs in Second Virtual Machine (Client-1)
+20. Check logs in Second Virtual Machine (Client-1)
  <p> 
 </p>
 
@@ -475,7 +475,7 @@ Observe we are unable to see anything in the security Folder because we are not 
  <p> 
 </p>
 
-3. View logs in Client-1 as Admin
+21. View logs in Client-1 as Admin
  <p> 
 </p>
 
