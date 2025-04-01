@@ -55,15 +55,24 @@ Rt Click Start -> Run -> Type Powershell -> Rt Click, run as Admin -> Copy scrip
 ![image](https://github.com/user-attachments/assets/8a61ffe7-d702-4d45-a0d8-c7a35f081482)
 ![image](https://github.com/user-attachments/assets/22ae019c-7eca-4cb7-86d2-6fe9f561afe0)
 
-5. Open Active Directory Users and Computers -> Expand the Domain -> "_Employees," Rt click, Refresh
+4. check for Uasers in Active Directory "_Employees" folder
+
+Start -> Windows Administrative Tools -> Open Active Directory Users and Computers -> Expand the Domain -> "_Employees," Rt Click, Refresh
+
+![image](https://github.com/user-attachments/assets/0f3efa4d-dc18-42fd-a5b4-da0e7ff66e0e)
 
 There should be a list of numerous employees being generated that can now log into Client 1
+
+![image](https://github.com/user-attachments/assets/1d1ed3f7-4b13-4093-bde3-22bc7fed15ce)
 
 7. Log out of Client 1 as the Domain Admin
 
 8. Login to client 1 using a Random Employee
 
 Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
+
+![image](https://github.com/user-attachments/assets/be3b8dc0-eb0c-48bb-97de-4d64db22f818)
+![image](https://github.com/user-attachments/assets/414a21c3-fd16-4c6c-b3aa-bac671591e44)
 
 10. Log out of Client-1
 
