@@ -38,7 +38,7 @@ Rt Click Start -> System -> Remote Desktop -> "Select Users That can Remotely Ac
 ![image](https://github.com/user-attachments/assets/06826e10-7fab-4345-be37-319e4e567edb)
 ![image](https://github.com/user-attachments/assets/b626a4ab-1058-4a42-b19a-3bdc433bd1a1)
 
-3. Create Additional User
+2. Create Additional User
 
 Login to Dc-1 as Admin User 
 
@@ -46,7 +46,7 @@ Remote desktop -> Public Ip Address -> Enter Username: "Specify Domain name (bac
 
 ![image](https://github.com/user-attachments/assets/28ca1201-9e52-4b3a-8b9b-2e75c58b26dc)
 
-Rt Click Start -> Run -> Type Powershell -> Rt Click, run as Admin -> Copy script text into Powershell -> Save to desktop -> Run script
+Rt Click Start -> Run -> Type Powershell -> Rt Click, Run as Administrator -> Copy script text into Powershell -> Save to desktop -> Run script
 
 ![image](https://github.com/user-attachments/assets/7d301e22-606d-43d9-b973-5fdb5c212300)
 ![image](https://github.com/user-attachments/assets/bab4505c-25d6-4d70-a151-6d0ffde84b5f)
@@ -55,7 +55,7 @@ Rt Click Start -> Run -> Type Powershell -> Rt Click, run as Admin -> Copy scrip
 ![image](https://github.com/user-attachments/assets/8a61ffe7-d702-4d45-a0d8-c7a35f081482)
 ![image](https://github.com/user-attachments/assets/22ae019c-7eca-4cb7-86d2-6fe9f561afe0)
 
-4. check for Uasers in Active Directory "_Employees" folder
+3. Check for Users in Active Directory "_Employees" folder
 
 Start -> Windows Administrative Tools -> Open Active Directory Users and Computers -> Expand the Domain -> "_Employees," Rt Click, Refresh
 
@@ -65,22 +65,18 @@ There should be a list of numerous employees being generated that can now log in
 
 ![image](https://github.com/user-attachments/assets/1d1ed3f7-4b13-4093-bde3-22bc7fed15ce)
 
-7. Log out of Client 1 as the Domain Admin
+4. Log out of Client 1 as the Domain Admin
 
-8. Login to client 1 using a Random Employee
+5. Login to client 1 using a Random Employee
 
 Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
 
 ![image](https://github.com/user-attachments/assets/be3b8dc0-eb0c-48bb-97de-4d64db22f818)
 ![image](https://github.com/user-attachments/assets/414a21c3-fd16-4c6c-b3aa-bac671591e44)
 
-10. Log out of Client-1
+6. Log out of Client-1
 
-Now  we will move on to dealing with simulated user account problems and Group policy settings
-
-1. Login back into to Dc-1
-
-Go to Vm in Azure -> click Dc-1 -> Public Ip Address -> Remote Desktop -> Enter Username: "Specify Domain Name (back slash) original Username" -> Enter Password
+Now  we will move on to dealing with simulated user account problems and Group Policy settings
    
 Attempt to login to Client-1 as an employee with a bad password until account lockout
 
@@ -88,18 +84,28 @@ Attempt to login to Client-1 as an employee with a bad password until account lo
 
 Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter wrong Employee Password 10x
 
+![image](https://github.com/user-attachments/assets/03bb7020-9222-47fb-acec-8318ca865e80)
+
 After the 1oth attempt, try to login using the correct password
 
 3. Login to Client 1 using a Random Employee
 
 Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Employee Username: "Specify Domain Name (back slash) Employee Username" -> Enter Employee Password
 
-If you are able to login that is because account lockout is not set, so go ahead and log out of Client 1. We are go to set it using group policy.
+![image](https://github.com/user-attachments/assets/ff1af80f-b656-434b-8369-c0172c1e5495)
+
+If you are able to login that is because account lockout is not set, so we are go to set it using Group Policy. Log out of Client 1.
 
 4. Configure Account Lockout (turn on)
 
-(must be in Dc-1) -> Rt Click Start -> Run -> Type "gpmc.msc" -> Enter -> Rt Click  "Default Domain Policy" -> Edit -> Computer Config ->  Policies -> Window Settings -> Security Settings -> Account Policies -> Account Lockout Policy -> Double Click "Account Lockout Duration" -> Check box, Set 
-Lockout Time -> Ok x2 -> Apply
+(must be in Dc-1) -> Rt Click Start -> Run -> Type "gpmc.msc" -> Enter -> Rt Click  "Default Domain Policy" -> Edit -> Computer Config ->  Policies -> Window Settings -> Security Settings -> Account Policies -> Account Lockout Policy -> Double Click "Account Lockout Duration" -> Check box, Set Lockout Time -> Ok x2 -> Apply
+
+![image](https://github.com/user-attachments/assets/143fb8ac-fd58-409b-84ac-f42aa81f280c)
+![image](https://github.com/user-attachments/assets/34853f52-3cf7-4e81-a1a7-982943332972)
+![image](https://github.com/user-attachments/assets/724a735a-f352-4005-84c4-7152be49b620)
+![image](https://github.com/user-attachments/assets/53ae625f-7418-4598-97cd-9ad99648cbba)
+![image](https://github.com/user-attachments/assets/919fe15b-aa00-4098-97f1-dff84f0355d1)
+![image](https://github.com/user-attachments/assets/b39890a8-2561-4649-8a27-48eec5980c28)
 
 Double click "Account Counter" -> Check box, Set Counter -> Ok x2 -> Apply
 
