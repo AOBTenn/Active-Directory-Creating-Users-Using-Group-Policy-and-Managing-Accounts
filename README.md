@@ -105,17 +105,17 @@ If you are able to login that is because account lockout is not set, so we are g
 ![image](https://github.com/user-attachments/assets/724a735a-f352-4005-84c4-7152be49b620)
 ![image](https://github.com/user-attachments/assets/53ae625f-7418-4598-97cd-9ad99648cbba)
 ![image](https://github.com/user-attachments/assets/919fe15b-aa00-4098-97f1-dff84f0355d1)
-![image](https://github.com/user-attachments/assets/b39890a8-2561-4649-8a27-48eec5980c28)
+![image](https://github.com/user-attachments/assets/370a48fa-2842-49ba-ac51-e417f5035733)
+![image](https://github.com/user-attachments/assets/05492c2d-ca08-4af5-8758-af19b5677b73)
+![image](https://github.com/user-attachments/assets/e334c20c-d8ec-4ba0-ab4c-5b1c94a50d2c)
 
-Double click "Account Counter" -> Check box, Set Counter -> Ok x2 -> Apply
+Force Policy to Reset
 
 5. Login to Client-1 as Domain Admin
 
 Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Domain Username: "Specify Domain Admin Name (back slash) Domain Admin Username" -> Enter Domain Admin Password
 
-6. Force Policy to Reset
-
-In Client-1 -> Rt Click Start -> Command Prompt -> Type "gpupdate /force" -> Enter
+ Rt Click Start -> Command Prompt -> Type "gpupdate /force" -> Enter
 
 7. Log out of Client-1 as the Domain Admin
 
