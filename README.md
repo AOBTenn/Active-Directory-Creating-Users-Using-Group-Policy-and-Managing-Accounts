@@ -115,7 +115,12 @@ Force Policy to Reset
 
 Go to Vm in Azure -> Click Client-1 -> Public Ip Address -> Remote Desktop -> Enter Domain Username: "Specify Domain Admin Name (back slash) Domain Admin Username" -> Enter Domain Admin Password
 
- Rt Click Start -> Command Prompt -> Type "gpupdate /force" -> Enter
+![image](https://github.com/user-attachments/assets/296593e7-4cb5-44ed-b18b-981f8fd85161)
+
+Rt Click Start -> Command Prompt -> Type "gpupdate /force" -> Enter
+
+![image](https://github.com/user-attachments/assets/9fdbc689-a15e-43a5-ad2d-7bc5126aff3d)
+![image](https://github.com/user-attachments/assets/55c5feef-9626-42e1-ab36-c7e1092c1ac6)
 
 7. Log out of Client-1 as the Domain Admin
 
